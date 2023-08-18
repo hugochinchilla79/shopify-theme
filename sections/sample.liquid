@@ -1,0 +1,16 @@
+{% schema %}
+  {
+    "name": "Sample Liquid",
+    "settings": [
+      {
+        "type": "text",
+        "id": "sample_text",
+        "label": "Sample Text"
+      }
+    ]
+  }
+{% endschema %}
+
+<h1>
+  {{ section.settings.sample_text }}
+</h1>
