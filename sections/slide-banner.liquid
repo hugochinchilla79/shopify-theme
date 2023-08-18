@@ -1,0 +1,50 @@
+<div>
+  Hello hello can you hear me?
+
+  {% for block in section.blocks %}
+
+    <div class="slide">
+      <div class="slide__image">
+        <img src="{{ block.settings.slide_image | img_url: 'master' }}" alt="{{ block.settings.slide_title }}">
+      </div>
+      <div class="slide__content">
+        <h2 class="slide__title">{{ block.settings.slide_title }}</h2>
+        <p class="slide__subtitle">{{ block.settings.slide_subtitle }}</p>
+        <a href="{{ block.settings.slide_link }}" class="slide__link">Shop Now</a>
+      </div>
+    </div>
+
+  {% endfor %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Slide Banner Hero",
+    "blocks": [
+      {
+        "name": "Slide",
+        "type": "slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "slide_image",
+            "label": "Slide Image"
+          }, {
+            "type": "text",
+            "id": "slide_title",
+            "label": "Slide Title"
+          }, {
+            "type": "text",
+            "id": "slide_subtitle",
+            "label": "Slide Subtitle"
+          }, {
+            "type": "url",
+            "id": "slide_link",
+            "label": "Slide Link"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
